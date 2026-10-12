@@ -1,0 +1,1320 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap");
+
+/* =========================
+   Dashboard base
+========================= */
+
+.owner-dashboard {
+  min-height: 100vh;
+  padding-bottom: 60px;
+  color: #19352b;
+  background: #f7f9f7;
+  font-family: "DM Sans", sans-serif;
+}
+
+.owner-dashboard *,
+.owner-dashboard *::before,
+.owner-dashboard *::after {
+  box-sizing: border-box;
+}
+
+.owner-dashboard button,
+.owner-dashboard input,
+.owner-dashboard select,
+.owner-dashboard textarea {
+  font-family: inherit;
+}
+
+/* =========================
+   Dashboard header
+========================= */
+
+.owner-dashboard-header {
+  padding: 42px 6%;
+  background: linear-gradient(120deg, #e7f4eb, #f4f8ef);
+  border-bottom: 1px solid #e1ebe2;
+}
+
+.owner-dashboard-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.owner-dashboard-eyebrow {
+  display: inline-block;
+  color: #37825c;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+
+.owner-dashboard-header h1 {
+  margin: 9px 0;
+  color: #19352b;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.owner-dashboard-header p {
+  margin: 0;
+  color: #66776d;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.owner-add-button,
+.owner-submit-button,
+.owner-cancel-button,
+.owner-refresh-button,
+.owner-view-link,
+.owner-edit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.owner-add-button,
+.owner-submit-button {
+  padding: 12px 16px;
+  color: #fff;
+  background: #287348;
+  border: 1px solid #287348;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.owner-add-button {
+  flex-shrink: 0;
+}
+
+.owner-add-button:hover,
+.owner-submit-button:hover:not(:disabled) {
+  background: #1d5c39;
+  border-color: #1d5c39;
+}
+
+.owner-add-button:focus-visible,
+.owner-submit-button:focus-visible,
+.owner-edit-button:focus-visible,
+.owner-view-link:focus-visible {
+  outline: 2px solid #287348;
+  outline-offset: 3px;
+}
+
+.owner-dashboard-main {
+  width: min(1200px, 88%);
+  margin: 32px auto 0;
+}
+
+/* =========================
+   Alerts
+========================= */
+
+.owner-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 13px 15px;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.owner-alert-error {
+  color: #a12f32;
+  background: #fff0f0;
+  border: 1px solid #f1d1d1;
+}
+
+.owner-alert-success {
+  color: #22613e;
+  background: #e7f6eb;
+  border: 1px solid #c8e9d1;
+}
+
+.owner-alert svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* =========================
+   Dashboard statistics
+========================= */
+
+.owner-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.owner-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+  padding: 19px;
+  background: #fff;
+  border: 1px solid #e5ebe5;
+  border-radius: 13px;
+  box-shadow: 0 5px 20px #173d2908;
+}
+
+.owner-stat-icon {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 12px;
+}
+
+.owner-stat-total {
+  color: #3573a5;
+  background: #eaf3fb;
+}
+
+.owner-stat-pending {
+  color: #936514;
+  background: #fff4d9;
+}
+
+.owner-stat-approved {
+  color: #237146;
+  background: #e2f5e8;
+}
+
+.owner-stat-rejected {
+  color: #a43b3b;
+  background: #fde9e9;
+}
+
+.owner-stat-card span,
+.owner-stat-card strong {
+  display: block;
+}
+
+.owner-stat-card div:last-child span {
+  color: #78867d;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.owner-stat-card strong {
+  margin-top: 4px;
+  color: #20392c;
+  font-size: 25px;
+}
+
+/* =========================
+   Shared section layouts
+========================= */
+
+.owner-form-panel,
+.owner-listings-section,
+.owner-enquiries-section {
+  min-width: 0;
+  margin-bottom: 28px;
+  padding: 25px;
+  background: #fff;
+  border: 1px solid #e5ebe5;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px #173d2906;
+}
+
+.owner-form-heading h2,
+.owner-listings-heading h2 {
+  margin: 7px 0 5px;
+  color: #20392c;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  overflow-wrap: anywhere;
+}
+
+.owner-form-heading p,
+.owner-listings-heading p {
+  max-width: 650px;
+  margin: 0;
+  color: #78867d;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================
+   Add / edit property form
+========================= */
+
+.owner-property-form {
+  margin-top: 22px;
+}
+
+.owner-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.owner-form-full {
+  grid-column: 1 / -1;
+}
+
+.owner-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  color: #344d3d;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.owner-form-field > span {
+  line-height: 1.5;
+}
+
+.owner-form-field input,
+.owner-form-field select,
+.owner-form-field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 13px;
+  color: #233b2e;
+  background: #fff;
+  border: 1px solid #dce5dd;
+  border-radius: 9px;
+  outline: none;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.owner-form-field input,
+.owner-form-field select {
+  min-height: 45px;
+}
+
+.owner-form-field textarea {
+  min-height: 105px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.owner-form-field input::placeholder,
+.owner-form-field textarea::placeholder {
+  color: #9aa79d;
+}
+
+.owner-form-field input:focus,
+.owner-form-field select:focus,
+.owner-form-field textarea:focus {
+  border-color: #62a77a;
+  box-shadow: 0 0 0 3px #28734815;
+}
+
+.owner-form-field small {
+  color: #78867d;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* =========================
+   Multiple image/video uploader
+========================= */
+
+.owner-media-field {
+  padding-top: 3px;
+}
+
+.owner-media-field > span {
+  margin-bottom: 2px;
+  color: #344d3d;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.owner-media-upload {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 165px;
+  padding: 25px 18px;
+  color: #347b54;
+  text-align: center;
+  background: #f8fbf8;
+  border: 2px dashed #c7d9cb;
+  border-radius: 13px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.owner-media-upload:hover {
+  background: #eff7f0;
+  border-color: #62a77a;
+}
+
+.owner-media-upload > svg {
+  flex-shrink: 0;
+}
+
+.owner-media-upload strong {
+  color: #285c3d;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.owner-media-upload small {
+  color: #78867d;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.owner-media-upload input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.owner-media-upload:focus-within {
+  outline: 2px solid #287348;
+  outline-offset: 3px;
+}
+
+.owner-media-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.owner-media-preview {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e1e9e2;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px #173d2907;
+}
+
+.owner-media-preview img,
+.owner-media-preview video {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background: #edf2ee;
+}
+
+.owner-media-preview video {
+  object-fit: contain;
+}
+
+.owner-media-file-name {
+  display: block;
+  padding: 10px 42px 10px 11px;
+  overflow: hidden;
+  color: #53645a;
+  font-size: 11px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.owner-media-remove {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  padding: 0;
+  color: #a12f32;
+  background: #fff0f0;
+  border: 1px solid #f1d1d1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.owner-media-remove:hover {
+  background: #ffe0e0;
+}
+
+.owner-media-remove:focus-visible {
+  outline: 2px solid #a12f32;
+  outline-offset: 2px;
+}
+
+.owner-media-help {
+  display: block;
+  margin-top: 10px;
+  color: #78867d;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* =========================
+   Form action buttons
+========================= */
+
+.owner-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 23px;
+}
+
+.owner-cancel-button {
+  padding: 12px 16px;
+  color: #53645a;
+  background: #fff;
+  border: 1px solid #dce5dd;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.owner-cancel-button:hover:not(:disabled) {
+  background: #f5f8f5;
+}
+
+.owner-submit-button:disabled,
+.owner-cancel-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+/* =========================
+   Listing section controls
+========================= */
+
+.owner-listings-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.owner-refresh-button {
+  flex-shrink: 0;
+  padding: 10px 13px;
+  color: #315a42;
+  background: #fff;
+  border: 1px solid #dce5dd;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.owner-refresh-button:hover:not(:disabled) {
+  background: #f2f7f2;
+  border-color: #b9d0bd;
+}
+
+.owner-refresh-button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+/* =========================
+   Property listing cards
+========================= */
+
+.owner-listings-list {
+  display: grid;
+  gap: 13px;
+}
+
+.owner-listing-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  padding: 17px;
+  background: #fff;
+  border: 1px solid #e5ebe5;
+  border-radius: 12px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.owner-listing-card:hover {
+  border-color: #d0e1d3;
+  box-shadow: 0 5px 16px #173d2908;
+}
+
+.owner-listing-image {
+  display: grid;
+  place-items: center;
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  color: #347b54;
+  background: #eaf5ed;
+  border-radius: 12px;
+}
+
+.owner-listing-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.owner-listing-title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.owner-listing-title-row h3 {
+  margin: 0;
+  color: #233b2e;
+  font-size: 16px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.owner-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  padding: 6px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.owner-status-pending {
+  color: #936514;
+  background: #fff4d9;
+}
+
+.owner-status-approved {
+  color: #237146;
+  background: #e2f5e8;
+}
+
+.owner-status-rejected,
+.owner-status-deleted {
+  color: #a43b3b;
+  background: #fde9e9;
+}
+
+.owner-listing-location,
+.owner-listing-meta span,
+.owner-approved-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.owner-listing-location {
+  margin: 9px 0;
+  color: #78867d;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.owner-listing-location svg,
+.owner-listing-meta svg,
+.owner-approved-note svg {
+  flex-shrink: 0;
+}
+
+.owner-listing-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+.owner-listing-meta span {
+  color: #56685c;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.owner-rejection-reason {
+  margin: 10px 0 0;
+  padding: 10px;
+  color: #9e3b3b;
+  background: #fff2f2;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.owner-approved-note {
+  margin: 10px 0 0;
+  color: #287348;
+  font-size: 11px;
+}
+
+/* Edit and view actions */
+
+.owner-listing-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.owner-edit-button {
+  padding: 10px 13px;
+  color: #285c3d;
+  background: #edf6ef;
+  border: 1px solid #c9dfce;
+  border-radius: 9px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.owner-edit-button:hover {
+  background: #dfeee2;
+  border-color: #a9cdb1;
+}
+
+.owner-view-link {
+  flex-shrink: 0;
+  color: #287348;
+  white-space: nowrap;
+}
+
+.owner-view-link:hover {
+  color: #174d2d;
+}
+
+/* =========================
+   Empty and loading states
+========================= */
+
+.owner-listings-state,
+.owner-empty-state,
+.owner-enquiries-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 38px 20px;
+  text-align: center;
+  background: #fbfdfb;
+  border: 1px dashed #d8e4da;
+  border-radius: 12px;
+}
+
+.owner-listings-state {
+  min-height: 180px;
+  gap: 12px;
+  color: #738278;
+  border: 0;
+  background: transparent;
+}
+
+.owner-listings-state p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.owner-empty-icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  color: #347b54;
+  background: #eaf5ed;
+  border-radius: 19px;
+}
+
+.owner-empty-state h3,
+.owner-enquiries-empty h3 {
+  margin: 15px 0 7px;
+  color: #263e30;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.owner-empty-state p,
+.owner-enquiries-empty p {
+  max-width: 460px;
+  margin: 0;
+  color: #78867d;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.owner-empty-state .owner-submit-button {
+  margin-top: 18px;
+}
+
+/* =========================
+   Tenant enquiries
+========================= */
+
+.owner-enquiries-section .owner-listings-heading {
+  margin-bottom: 20px;
+}
+
+.owner-enquiry-count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 26px;
+  height: 26px;
+  margin-left: 5px;
+  padding: 0 6px;
+  color: #286c45;
+  background: #e8f4eb;
+  border-radius: 8px;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.owner-enquiries-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.owner-enquiry-card {
+  min-width: 0;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #e5ebe5;
+  border-radius: 13px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.owner-enquiry-card:hover {
+  border-color: #c5ddcb;
+  box-shadow: 0 5px 16px #173d2909;
+}
+
+.owner-enquiry-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  min-width: 0;
+}
+
+.owner-enquiry-room-icon,
+.owner-enquiry-tenant-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #347b54;
+  background: #eaf5ed;
+  border-radius: 11px;
+}
+
+.owner-enquiry-room-icon {
+  width: 44px;
+  height: 44px;
+}
+
+.owner-enquiry-room {
+  flex: 1;
+  min-width: 0;
+}
+
+.owner-enquiry-room h3 {
+  margin: 2px 0 7px;
+  color: #233b2e;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.owner-enquiry-room p {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin: 0;
+  color: #286c45;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.owner-enquiry-room p span {
+  color: #7b8980;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.owner-enquiry-location {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 7px;
+  color: #78867d;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.owner-enquiry-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  padding: 6px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.owner-enquiry-status-pending {
+  color: #936514;
+  background: #fff4d9;
+}
+
+.owner-enquiry-status-accepted {
+  color: #237146;
+  background: #e2f5e8;
+}
+
+.owner-enquiry-status-rejected {
+  color: #a43b3b;
+  background: #fde9e9;
+}
+
+.owner-enquiry-status-cancelled {
+  color: #626d65;
+  background: #edf0ed;
+}
+
+.owner-enquiry-tenant {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  margin-top: 18px;
+  padding: 13px 0;
+  border-top: 1px solid #edf0ed;
+  border-bottom: 1px solid #edf0ed;
+}
+
+.owner-enquiry-tenant-icon {
+  width: 39px;
+  height: 39px;
+}
+
+.owner-enquiry-tenant > div:last-child {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.owner-enquiry-tenant strong {
+  color: #263e30;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.owner-enquiry-tenant a,
+.owner-enquiry-no-email {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  color: #718077;
+  font-size: 11px;
+  line-height: 1.5;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.owner-enquiry-tenant a:hover {
+  color: #287348;
+}
+
+.owner-enquiry-tenant a svg {
+  flex-shrink: 0;
+}
+
+.owner-enquiry-date {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 13px;
+  color: #7c8a80;
+  font-size: 11px;
+}
+
+.owner-enquiry-date svg {
+  flex-shrink: 0;
+}
+
+.owner-enquiry-actions {
+  display: flex;
+  gap: 9px;
+  margin-top: 16px;
+}
+
+.owner-enquiry-accept,
+.owner-enquiry-reject {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex: 1;
+  min-width: 0;
+  padding: 10px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 800;
+  transition: background 0.2s ease;
+}
+
+.owner-enquiry-accept {
+  color: #fff;
+  background: #287348;
+  border: 1px solid #287348;
+}
+
+.owner-enquiry-accept:hover:not(:disabled) {
+  background: #1d5c39;
+}
+
+.owner-enquiry-reject {
+  color: #a43b3b;
+  background: #fff;
+  border: 1px solid #f0cccc;
+}
+
+.owner-enquiry-reject:hover:not(:disabled) {
+  background: #fff2f2;
+}
+
+.owner-enquiry-accept:disabled,
+.owner-enquiry-reject:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+/* =========================
+   Loading animation
+========================= */
+
+.owner-button-spinner {
+  animation: owner-spin 1s linear infinite;
+}
+
+@keyframes owner-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   Tablet layout
+========================= */
+
+@media (max-width: 1000px) {
+  .owner-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .owner-enquiries-list {
+    grid-template-columns: 1fr;
+  }
+
+  .owner-listing-card {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .owner-listing-info {
+    flex-basis: calc(100% - 90px);
+  }
+
+  .owner-listing-actions {
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 86px;
+  }
+}
+
+/* =========================
+   Mobile layout
+========================= */
+
+@media (max-width: 650px) {
+  .owner-dashboard {
+    padding-bottom: 35px;
+  }
+
+  .owner-dashboard-header {
+    padding: 30px 5%;
+  }
+
+  .owner-dashboard-header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .owner-dashboard-header h1 {
+    font-size: 31px;
+  }
+
+  .owner-dashboard-header p {
+    font-size: 13px;
+  }
+
+  .owner-add-button {
+    width: 100%;
+  }
+
+  .owner-dashboard-main {
+    width: 92%;
+    margin-top: 22px;
+  }
+
+  .owner-stats-grid {
+    gap: 10px;
+  }
+
+  .owner-stat-card {
+    gap: 9px;
+    padding: 13px 11px;
+  }
+
+  .owner-stat-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .owner-stat-card strong {
+    font-size: 22px;
+  }
+
+  .owner-stat-card div:last-child span {
+    font-size: 10px;
+  }
+
+  .owner-form-panel,
+  .owner-listings-section,
+  .owner-enquiries-section {
+    padding: 16px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+  }
+
+  .owner-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .owner-form-full {
+    grid-column: auto;
+  }
+
+  .owner-listings-heading {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .owner-listings-heading h2,
+  .owner-form-heading h2 {
+    font-size: 21px;
+  }
+
+  .owner-listings-heading p {
+    font-size: 12px;
+  }
+
+  .owner-refresh-button {
+    padding: 9px;
+    font-size: 11px;
+  }
+
+  .owner-listing-card {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 13px;
+  }
+
+  .owner-listing-image {
+    width: 52px;
+    height: 52px;
+  }
+
+  .owner-listing-info {
+    flex: 1 1 calc(100% - 70px);
+    min-width: 0;
+  }
+
+  .owner-listing-title-row {
+    align-items: flex-start;
+    gap: 7px;
+  }
+
+  .owner-listing-title-row h3 {
+    font-size: 14px;
+  }
+
+  .owner-listing-location {
+    align-items: flex-start;
+    font-size: 11px;
+  }
+
+  .owner-listing-meta {
+    gap: 8px 12px;
+  }
+
+  .owner-listing-meta span {
+    font-size: 11px;
+  }
+
+  .owner-listing-actions {
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 0;
+    margin-top: 2px;
+  }
+
+  .owner-edit-button,
+  .owner-view-link {
+    min-height: 39px;
+  }
+
+  .owner-edit-button {
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+
+  .owner-view-link {
+    margin-left: 0;
+    font-size: 12px;
+  }
+
+  .owner-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .owner-form-actions button {
+    width: 100%;
+  }
+
+  .owner-media-upload {
+    min-height: 145px;
+    padding: 20px 12px;
+  }
+
+  .owner-media-preview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .owner-media-preview img,
+  .owner-media-preview video {
+    height: 115px;
+  }
+
+  .owner-media-file-name {
+    padding: 9px 36px 9px 8px;
+    font-size: 10px;
+  }
+
+  .owner-enquiry-top {
+    flex-wrap: wrap;
+  }
+
+  .owner-enquiry-status {
+    margin-left: auto;
+  }
+
+  .owner-enquiry-actions {
+    flex-direction: column;
+  }
+
+  .owner-enquiry-accept,
+  .owner-enquiry-reject {
+    width: 100%;
+    min-height: 42px;
+    padding: 12px;
+  }
+}
+
+/* =========================
+   Small phones
+========================= */
+
+@media (max-width: 380px) {
+  .owner-dashboard-main {
+    width: 94%;
+  }
+
+  .owner-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .owner-stat-card {
+    padding: 14px;
+  }
+
+  .owner-listings-heading {
+    flex-wrap: wrap;
+  }
+
+  .owner-enquiry-card {
+    padding: 13px;
+  }
+
+  .owner-enquiry-status {
+    margin-left: 0;
+  }
+
+  .owner-media-preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .owner-media-preview img,
+  .owner-media-preview video {
+    height: 175px;
+  }
+}
