@@ -1,57 +1,68 @@
 
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { Home, Search, UserRound, PlusCircle, Bell, LayoutDashboard } from "lucide-react";
+import {
+  Home,
+  Search,
+  UserRound,
+  PlusCircle,
+  Bell,
+  LayoutDashboard,
+} from "lucide-react";
 import "./Navbar.css";
 
 function Navbar() {
   const navigate = useNavigate();
 
   const token = localStorage.getItem("token");
-  const role = (
-    localStorage.getItem("role") ||
-    localStorage.getItem("userRole") ||
-    ""
-  ).toUpperCase();
-
- const handleDashboard = () => {
-  const token = localStorage.getItem("token");
 
   const savedUser = localStorage.getItem("user");
-  const savedRole = localStorage.getItem("role");
+  let role =
+    localStorage.getItem("role") ||
+    localStorage.getItem("userRole") ||
+    "";
 
-  let role = savedRole;
-
-  // Fallback: read the role from the saved user object
+  // Fallback: get the role from the saved user object
   if (!role && savedUser) {
     try {
-      role = JSON.parse(savedUser)?.role;
+      role = JSON.parse(savedUser)?.role || "";
     } catch {
-      role = null;
+      role = "";
     }
   }
 
-  role = role?.toUpperCase();
+  role = role.toUpperCase();
 
-  if (!token) {
-    navigate("/login");
-    return;
-  }
+  const isOwner = Boolean(token) && role === "OWNER";
 
-  switch (role) {
-    case "TENANT":
-      navigate("/tenant");
-      break;
-    case "OWNER":
-      navigate("/owner");
-      break;
-    case "ADMIN":
-      navigate("/admin");
-      break;
-    default:
-      console.error("Unable to identify user role:", role);
+  const handleDashboard = () => {
+    if (!token) {
       navigate("/login");
-  }
-};
+      return;
+    }
+
+    switch (role) {
+      case "TENANT":
+        navigate("/tenant");
+        break;
+      case "OWNER":
+        navigate("/owner");
+        break;
+      case "ADMIN":
+        navigate("/admin");
+        break;
+      default:
+        console.error("Unable to identify user role:", role);
+        navigate("/login");
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+    localStorage.removeItem("userRole");
+    localStorage.removeItem("user");
+    navigate("/login");
+  };
 
   return (
     <header className="navbar">
@@ -70,15 +81,19 @@ function Navbar() {
           Find Rooms
         </NavLink>
 
-        <NavLink to="/register?role=OWNER">
-          <PlusCircle size={17} />
-          List Your Room
-        </NavLink>
+        {isOwner && (
+          <NavLink to="/owner/list-room">
+            <PlusCircle size={17} />
+            List Your Room
+          </NavLink>
+        )}
 
-        <NavLink to="/notifications" className="navbar-link">
-          <Bell size={18} />
-          <span>Notifications</span>
-        </NavLink>
+        {token && (
+          <NavLink to="/notifications" className="navbar-link">
+            <Bell size={18} />
+            <span>Notifications</span>
+          </NavLink>
+        )}
 
         <button
           type="button"
@@ -106,13 +121,7 @@ function Navbar() {
           <button
             type="button"
             className="login-link navbar-logout"
-            onClick={() => {
-              localStorage.removeItem("token");
-              localStorage.removeItem("role");
-              localStorage.removeItem("userRole");
-              localStorage.removeItem("user");
-              navigate("/login");
-            }}
+            onClick={handleLogout}
           >
             <UserRound size={17} />
             Log out
