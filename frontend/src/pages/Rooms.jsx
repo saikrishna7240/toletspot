@@ -39,7 +39,7 @@ function Rooms() {
       setError("");
 
       try {
-        const response = await api.get("/rooms");
+        const response = await api.get("/api/rooms");
         const data = Array.isArray(response.data)
           ? response.data
           : response.data.rooms || response.data.data || [];
